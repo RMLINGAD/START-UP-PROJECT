@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="user-css/general.css">
+    <link rel="stylesheet" type="text/css" href="user-css/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="user-css/consult.css">
+    <link rel="stylesheet" type="text/css" href="user-css/video.css">
+    <link rel="stylesheet" type="text/css" href="user-css/inbox-sent.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+    <title>USERDASH</title>
+</style>
+</head>
+<body>
+    <!--SIDEBAR FIXED-->
+    <div class="sidebar">
+        <header>
+            <img class="logo" src="img/RHAORIG.png">
+        </header>
+        <div class="username">
+            <p class="user">USERNAME</p>
+        </div>
+        <ul>
+            <li class=""><a onclick="content(0);" class="navlinks active "><i class="fa-solid fa-message"></i> CONSULT</a></li>
+            <li><a onclick="content(1);" class="navlinks "><i class="fa-solid fa-video"></i> VIDEO MEET</a></li>
+            <li><a onclick="content(2);" class="navlinks "><i class="fa-solid fa-envelope"></i> INBOX</a></li>
+            <li><a onclick="content(3);" class="navlinks "><i class="fa-solid fa-paper-plane"></i> SENT</a></li>
+            <li><a class="navlinks "><i class="fa-solid fa-right-from-bracket"></i> LOG OUT</a></li>
+        </ul>
+    </div>
+    <!--END SIDEBAR FIXED-->
+<!--BODY-->
+    <!--Dito niyo lagay yung consult, video meet, inbox, at sent-->
+    <div class="container-body" id="content-body">
+    
+    </div>
+    <!-- END BODY-->
+    <script src="/js/user.js"></script>
+</body>
+</html>
