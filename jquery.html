@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery</title>
+    <style>
+        .div-container{
+            height: 500px;
+            width: 500px;
+            background-color: gray;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .mail{
+            height: 500px;
+            width: 500px;
+            background-color: gray;
+            position: absolute;
+            top: 10px;
+            right: 40%;
+            z-index: 2;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1 id="header1">Jquery Tutorial</h1>
+    <h1 id="header2">Hello World</h1>
+    <div class="div-container" id="container">
+
+    </div>
+
+    <div class="mail" id="mails">
+
+    </div>
+
+    <button id="btn">Hide me</button>
+    <button id="btnshow">Show me</button>
+    <button id="toggleb">Toggle</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+         var header1 = $('#header1');
+         var container = $('#container')
+         var mail = $('#mails');
+
+        // console.log(header);
+
+        $(document).ready(function(){
+
+            $('#container').click(function(){
+                mail.toggle();
+            })
+
+           $('#btn').click(function(){
+
+            header1.hide();
+           })
+
+           $('#toggleb').click(function(){
+
+            container.toggle();
+           })
+
+
+           
+           $('#btnshow').click(function(){
+            header1.show();
+           })
+        })
+    </script>
+</body>
+</html>
