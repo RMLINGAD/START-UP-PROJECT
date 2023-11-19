@@ -1,5 +1,7 @@
 // app id sa agora
 //let APP_ID = "9b59bf70325740249e2b4d54c7c330bb";
+// app id sa agora
+//let APP_ID = "9b59bf70325740249e2b4d54c7c330bb";
 
 // app id sa agora
 let APP_ID = "9b59bf70325740249e2b4d54c7c330bb";
@@ -102,10 +104,6 @@ let createPeerConnection = async (MemberId) => {
   peerConnection = new RTCPeerConnection(servers);
 
   remoteStream = new MediaStream();
-  document.getElementById("user-2").srcObject = remoteStream;
-  document.getElementById("user-2").style.display = "block";
-
-  document.getElementById("user-1").classList.add("smallFrame");
 
   if (!localStream) {
     localStream = await navigator.mediaDevices.getUserMedia({
@@ -118,6 +116,12 @@ let createPeerConnection = async (MemberId) => {
   localStream.getTracks().forEach((track) => {
     peerConnection.addTrack(track, localStream);
   });
+
+  document.getElementById("user-1").srcObject = localStream;
+  document.getElementById("user-2").srcObject = remoteStream;
+  document.getElementById("user-2").style.display = "block";
+
+  document.getElementById("user-1").classList.add("smallFrame");
 
   peerConnection.ontrack = (event) => {
     event.streams[0].getTracks().forEach((track) => {
@@ -217,3 +221,4 @@ document.getElementById("camera-btn").addEventListener("click", toggleCamera);
 
 document.getElementById("mic-btn").addEventListener("click", toggleMic);
 init();
+
