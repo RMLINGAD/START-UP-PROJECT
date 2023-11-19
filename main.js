@@ -1,7 +1,5 @@
 // app id sa agora
 //let APP_ID = "9b59bf70325740249e2b4d54c7c330bb";
-// app id sa agora
-//let APP_ID = "9b59bf70325740249e2b4d54c7c330bb";
 
 // app id sa agora
 let APP_ID = "9b59bf70325740249e2b4d54c7c330bb";
@@ -101,6 +99,10 @@ let handleUserJoined = async (MemberId) => {
 };
 
 let createPeerConnection = async (MemberId) => {
+  if (peerConnection) {
+    peerConnection.close();
+    peerConnection = null;
+  }
   peerConnection = new RTCPeerConnection(servers);
 
   remoteStream = new MediaStream();
@@ -180,6 +182,8 @@ let createAnswer = async (MemberId) => {
 };
 
 let leaveChannel = async () => {
+  localStream = null;
+  roomId = null;
   await channel.leave();
   await client.logout();
 };
