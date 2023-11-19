@@ -182,11 +182,22 @@ let createAnswer = async (MemberId) => {
 };
 
 let leaveChannel = async () => {
+  localStream.getTracks().forEach((track) => track.stop()); // Stop all tracks in the local stream
   localStream = null;
   roomId = null;
+
+  if (peerConnection) {
+    peerConnection.close();
+    peerConnection = null;
+  }
+
+  document.getElementById("user-1").srcObject = null;
+  document.getElementById("user-2").srcObject = null;
+
   await channel.leave();
   await client.logout();
 };
+
 
 let toggleCamera = async () => {
   let videoTrack = localStream
